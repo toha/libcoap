@@ -65,15 +65,15 @@ coap_new_endpoint(const coap_address_t *addr, int flags) {
 
   if (ep) {
     memset(ep, 0, sizeof(struct coap_endpoint_t));
-    ep->handle.conn = udp_new(NULL, 0, NULL);
+    // ep->handle.conn = udp_new(NULL, 0, NULL);
 
-    if (!ep->handle.conn) {
-      coap_free_endpoint(ep);
-      return NULL;
-    }
+    // if (!ep->handle.conn) {
+    //   coap_free_endpoint(ep);
+    //   return NULL;
+    // }
 
-    uip_ipaddr_copy(&ep->addr.addr, &addr->addr);
-    udp_bind((struct uip_udp_conn *)ep->handle.conn, addr->port);
+    // uip_ipaddr_copy(&ep->addr.addr, &addr->addr);
+    // udp_bind((struct uip_udp_conn *)ep->handle.conn, addr->port);
   }
   return ep;
 }
