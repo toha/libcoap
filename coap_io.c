@@ -151,18 +151,18 @@ coap_new_endpoint(const coap_address_t *addr, int flags) {
   memcpy(&ep->addr, addr, sizeof(coap_address_t));
   
 #ifndef NDEBUG
-  if (LOG_DEBUG <= coap_get_log_level()) {
+/*  if (LOG_DEBUG <= coap_get_log_level()) {*/
 #ifndef INET6_ADDRSTRLEN
 #define INET6_ADDRSTRLEN 40
 #endif
-    unsigned char addr_str[INET6_ADDRSTRLEN+8];
+  /*  unsigned char addr_str[INET6_ADDRSTRLEN+8];
 
     if (coap_print_addr(addr, addr_str, INET6_ADDRSTRLEN+8)) {
       debug("created %sendpoint %s\n", 
 	    ep->flags & COAP_ENDPOINT_DTLS ? "DTLS " : "",
 	    addr_str);
     }
-  }
+  }*/
 #endif /* NDEBUG */
 
   return (coap_endpoint_t *)ep;
