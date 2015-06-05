@@ -509,8 +509,9 @@ coap_hash_request_uri(const coap_pdu_t *request, coap_key_t key) {
   coap_option_setb(filter, COAP_OPTION_URI_PATH);
 
   coap_option_iterator_init((coap_pdu_t *)request, &opt_iter, filter);
-  while ((option = coap_option_next(&opt_iter)))
+  while ((option = coap_option_next(&opt_iter))) {
     coap_hash(COAP_OPT_VALUE(option), COAP_OPT_LENGTH(option), key);
+  }
 }
 
 void
