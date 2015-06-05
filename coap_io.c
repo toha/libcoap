@@ -377,7 +377,11 @@ coap_network_read(coap_endpoint_t *ep, coap_packet_t **packet) {
   len = recvmsg(ep->handle.fd, &mhdr, 0);
 
   if (len < 0) {
+<<<<<<< HEAD
     coap_log(LOG_WARNING, "coap_network_read\n");
+=======
+    coap_log(LOG_WARNING, "coap_network_read:\n");
+>>>>>>> fn strerror not found with contiki. removed
     coap_free_packet(*packet);
     *packet = NULL;
   } else {
