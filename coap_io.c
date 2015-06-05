@@ -377,7 +377,7 @@ coap_network_read(coap_endpoint_t *ep, coap_packet_t **packet) {
   len = recvmsg(ep->handle.fd, &mhdr, 0);
 
   if (len < 0) {
-    coap_log(LOG_WARNING, "coap_network_read: %s\n", strerror(errno));
+    coap_log(LOG_WARNING, "coap_network_read:\n");
     coap_free_packet(*packet);
     *packet = NULL;
   } else {
