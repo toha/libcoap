@@ -316,7 +316,7 @@ coap_free_packet(coap_packet_t *packet) {
 }
 #endif /* WITH_POSIX */
 #ifdef WITH_CONTIKI
-static inline coap_packet_t *
+inline coap_packet_t *
 coap_malloc_packet(void) {
   return (coap_packet_t *)coap_malloc_type(COAP_PACKET, 0);
 }
