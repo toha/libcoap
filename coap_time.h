@@ -74,7 +74,6 @@ extern clock_time_t clock_offset;
 
 static inline void
 contiki_clock_init_impl(void) {
-  clock_init();
   clock_offset = clock_time();
 }
 
