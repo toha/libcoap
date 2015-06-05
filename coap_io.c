@@ -151,18 +151,11 @@ coap_new_endpoint(const coap_address_t *addr, int flags) {
   memcpy(&ep->addr, addr, sizeof(coap_address_t));
   
 #ifndef NDEBUG
-/*  if (LOG_DEBUG <= coap_get_log_level()) {*/
+
 #ifndef INET6_ADDRSTRLEN
 #define INET6_ADDRSTRLEN 40
 #endif
-  /*  unsigned char addr_str[INET6_ADDRSTRLEN+8];
 
-    if (coap_print_addr(addr, addr_str, INET6_ADDRSTRLEN+8)) {
-      debug("created %sendpoint %s\n", 
-	    ep->flags & COAP_ENDPOINT_DTLS ? "DTLS " : "",
-	    addr_str);
-    }
-  }*/
 #endif /* NDEBUG */
 
   return (coap_endpoint_t *)ep;
@@ -466,16 +459,11 @@ coap_network_read(coap_endpoint_t *ep, coap_packet_t **packet) {
 
     ((char *)uip_appdata)[len] = 0;
 #ifndef NDEBUG
-    /*if (LOG_DEBUG <= coap_get_log_level()) {*/
+
 #ifndef INET6_ADDRSTRLEN
 #define INET6_ADDRSTRLEN 40
 #endif
-   /*   unsigned char addr_str[INET6_ADDRSTRLEN+8];
-      
-      if (coap_print_addr(&(*packet)->src, addr_str, INET6_ADDRSTRLEN+8)) {
-	debug("received %d bytes from %s\n", len, addr_str);
-      }
-    }*/
+
 #endif /* NDEBUG */
 
     (*packet)->length = len;
