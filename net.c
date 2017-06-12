@@ -559,7 +559,7 @@ coap_send_impl(coap_context_t *context,
   if (bytes_written >= 0) {
     coap_transaction_id(dst, pdu, &id);
   } else {
-    coap_log(LOG_CRIT, "coap_send_impl\n");
+    coap_log(LOG_CRIT, "coap_send_impl:\n");
   }
 
   return id;
